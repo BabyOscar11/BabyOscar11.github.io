@@ -16,7 +16,7 @@ window.onload = function () {
 		} else if (font.toUpperCase() === "fantasy") {
 			paragraph.style.fontFamily = fantasy;
 		} else {
-			paragraph.style.fontFamily = serif;
+			
 		}
 		paragraph.style.color = color.toLowerCase();
 		setTimeout(() => paragraph.textContent += typingMessage[i], j);

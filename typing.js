@@ -10,7 +10,7 @@ window.onload = function () {
 			setTimeout(() => paragraph.textContent += typingMessage.value[i], j);
 			j += 50;
 		}
-		typingMessage.style.display = none;
-		typingButton.style.display = none;
+		typingMessage.style.display = "none";
+		typingButton.style.display = "none";
 	});
 }

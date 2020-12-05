@@ -1,9 +1,6 @@
 h1 {
     font-family: 'Nerko One', cursive;
 }
-a {
-    display: block;
-}
 .programs {
     display: flex;
     flex-direction: column;    

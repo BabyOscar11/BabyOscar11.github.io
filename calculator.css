@@ -1,0 +1,12 @@
+#calculate {
+    position: absolute;
+    top: 220px;
+    left: 10px;
+    background-color: green;
+    padding: 20px 32px;
+}
+#answer {
+    position: absolute;
+    top: 270px;
+    left: 10px;
+}

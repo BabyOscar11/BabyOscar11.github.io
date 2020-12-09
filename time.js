@@ -1,5 +1,5 @@
 window.onload = function () {
-    try { iotpoi
+    try { 
         function getTime () {
             let d = new Date();
             let h1 = document.querySelector("h1");

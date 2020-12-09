@@ -1,5 +1,5 @@
 window.onload = function () {
-    try {
+    try { jipotjp
         function getTime () {
             let d = new Date();
             let h1 = document.querySelector("h1");

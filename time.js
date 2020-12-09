@@ -1,5 +1,5 @@
 window.onload = function () {
-    try { jipotjp
+    try { iotpoi
         function getTime () {
             let d = new Date();
             let h1 = document.querySelector("h1");
@@ -34,7 +34,6 @@ window.onload = function () {
         }, 100);
     } catch (err) {
         document.write("<h1>Oops! There was an error.</h1>");
-        clearInterval(myInterval);
         console.log(err);
     }
 }

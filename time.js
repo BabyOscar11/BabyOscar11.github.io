@@ -3,7 +3,7 @@ window.onload = function () {
         function getTime () {
             let d = Date.now();
             let h1 = document.querySelector("h1");
-            h1.textContent = new Intl.DateTimeFormat("en" , { timeStyle: "medium" }).format(d);
+            h1.textContent = `The time is ${new Intl.DateTimeFormat("en" , { timeStyle: "medium" }).format(d)}`;
         }
         function getDay() {
             let e = new Date();

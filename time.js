@@ -1,6 +1,6 @@
-window.onload = function () {
+window.onload = function() {
     try { 
-        function getTime () {
+        function getTime() {
             let d = Date.now();
             let h1 = document.querySelector("h1");
             h1.textContent = `The time is ${new Intl.DateTimeFormat("en" , { timeStyle: "medium" }).format(d)}`;
@@ -10,7 +10,7 @@ window.onload = function () {
             let h2 = document.querySelector("h2");
             h2.textContent = new Intl.DateTimeFormat("en", {
                 dateStyle: "full"
-            }).format(e)
+            }).format(e);
         }
         let myInterval = setInterval(() => {
             getTime();
@@ -20,4 +20,4 @@ window.onload = function () {
         document.write("<h1>Oops! There was an error.</h1>");
         console.log(err);
     }
-}
+};

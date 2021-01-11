@@ -7,10 +7,10 @@ window.onload = function () {
         }
         function getDay() {
             let e = new Date();
-            let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-            let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
             let h2 = document.querySelector("h2");
-            h2.textContent = `${days[e.getDay()]}, ${months[e.getMonth()]} ${e.getDate()}, ${e.getFullYear()}`;
+            h2.textContent = new Intl.DateTimeFormat("en", {
+                dateStyle: "full"
+            }).format(e)
         }
         let myInterval = setInterval(() => {
             getTime();

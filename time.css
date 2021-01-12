@@ -8,8 +8,13 @@ button {
     top: 240px;
     left: 10px;
 }
-#allow-localStorage, #text-for-allow-localStorage {
+#allow-localStorage {
     position: absolute;
     top: 210px;
     left: 10px;
+}
+#text-for-allow-localStorage {
+    position: absolute;
+    top: 205px;
+    left: 20px;
 }

@@ -34,11 +34,17 @@ window.onload = function() {
                 }).format(e);
             }
         }
+        if (supportsLocalStorage()) {
+            if (localStorage.getItem("allowLocalStorage") === "allow-localStorage") {
+                allowLocalStorage.checked = true;
+            }         
+        }
         changeSettings.addEventListener("click", () => {
             languageValue = language.value;
             if (allowLocalStorage.value === "allow-localStorage") {
                 if (supportsLocalStorage()) {
                     localStorage.setItem("language", languageValue);
+                    localStorage.setItem("allowLocalStorage", allowLocalStorage.value);
                     changeSettingsResult.textContent = "Settings successfully changed!";
                 } else {
                     changeSettingsResult.textContent = "Sorry, your browser doesn't support localStorage. Your language was changed.";

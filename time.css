@@ -18,3 +18,7 @@ button {
     top: 207px;
     left: 30px;
 }
+#change-settings-result {
+    position: relative;
+    top: 100px;
+}

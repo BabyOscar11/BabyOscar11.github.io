@@ -8,7 +8,7 @@ button {
     top: 240px;
     left: 10px;
 }
-input {
+#allow-localStorage, #text-for-allow-localStorage {
     position: absolute;
     top: 220px;
     left: 10px;

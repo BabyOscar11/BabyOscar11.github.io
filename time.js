@@ -20,12 +20,22 @@ window.onload = function() {
         function getDay() {
             let e = new Date();
             let h2 = document.querySelector("h2");
-            h2.textContent = new Intl.DateTimeFormat(languageValue, {
-                dateStyle: "full"
-            }).format(e);
+            if (localStorage.getItem("language") !== null) {
+                h2.textContent = new Intl.DateTimeFormat(localStorage.getItem("language"), {
+                    dateStyle: "full"
+                }).format(e);
+            }
         }
         changeSettings.addEventListener("click", () => {
             languageValue = language.value;
+            if (allowLocalStorage.value === "allow-localStorage") {
+                if (supportsLocalStorage()) {
+                    localStorage.setItem("language", languageValue);
+                    changeSettingsResult.textContent = "Settings successfully changed!";
+                } else {
+                    changeSettingsResult.textContent = "Sorry, your browser doesn't support localStorage. Your language was changed.";
+                }
+            }
         });
         let myInterval = setInterval(() => {
             getTime();

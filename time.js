@@ -37,7 +37,9 @@ window.onload = function() {
         if (supportsLocalStorage()) {
             if (localStorage.getItem("allowLocalStorage") === "allow-localStorage") {
                 allowLocalStorage.checked = true;
-            }         
+            } else {
+                allowLocalStorage.checked = false;
+            }
         }
         changeSettings.addEventListener("click", () => {
             languageValue = language.value;
@@ -46,6 +48,12 @@ window.onload = function() {
                     localStorage.setItem("language", languageValue);
                     localStorage.setItem("allowLocalStorage", allowLocalStorage.value);
                     changeSettingsResult.textContent = "Settings successfully changed!";
+                } else {
+                    changeSettingsResult.textContent = "Sorry, your browser doesn't support localStorage. Your language was changed.";
+                }
+            } else {
+                if (supportsLocalStorage()) {
+                    localStorage.setItem("allowLocalStorage", allowLocalStorage.value)
                 } else {
                     changeSettingsResult.textContent = "Sorry, your browser doesn't support localStorage. Your language was changed.";
                 }

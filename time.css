@@ -4,3 +4,7 @@ h1, h2 {
 p {
     font-family: cursive;
 }
+button {
+    background-color: green;
+    padding: 20px 16px;
+}

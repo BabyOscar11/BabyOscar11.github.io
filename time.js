@@ -34,13 +34,6 @@ window.onload = function() {
                 }).format(e);
             }
         }
-        if (supportsLocalStorage()) {
-            if (localStorage.getItem("allowLocalStorage") === "allow-localStorage") {
-                allowLocalStorage.checked = true;
-            } else {
-                allowLocalStorage.checked = false;
-            }
-        }
         changeSettings.addEventListener("click", () => {
             languageValue = language.value;
             if (allowLocalStorage.value === "allow-localStorage") {
@@ -53,12 +46,18 @@ window.onload = function() {
                 }
             } else {
                 if (supportsLocalStorage()) {
-                    localStorage.setItem("allowLocalStorage", allowLocalStorage.value)
-                } else {
-                    changeSettingsResult.textContent = "Sorry, your browser doesn't support localStorage. Your language was changed.";
+                    localStorage.removeItem("allowLocalStorage");
+                    localStorage.removeItem("language");
                 }
             }
         });
+        if (supportsLocalStorage()) {
+            if (localStorage.getItem("allowLocalStorage") === "allow-localStorage") {
+                allowLocalStorage.checked = true;
+            } else {
+                allowLocalStorage.checked = false;
+            }
+        }
         let myInterval = setInterval(() => {
             getTime();
             getDay();

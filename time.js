@@ -3,12 +3,12 @@ window.onload = function() {
         function getTime() {
             let d = Date.now();
             let h1 = document.querySelector("h1");
-            h1.textContent = `The time is ${new Intl.DateTimeFormat("en" , { timeStyle: "medium" }).format(d)}`;
+            h1.textContent = `The time is ${new Intl.DateTimeFormat("en-US" , { timeStyle: "medium" }).format(d)}`;
         }
         function getDay() {
             let e = new Date();
             let h2 = document.querySelector("h2");
-            h2.textContent = new Intl.DateTimeFormat("en", {
+            h2.textContent = new Intl.DateTimeFormat("en-US", {
                 dateStyle: "full"
             }).format(e);
         }

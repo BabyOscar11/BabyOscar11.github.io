@@ -15,13 +15,21 @@ window.onload = function() {
         function getTime() {
             let d = Date.now();
             let h1 = document.querySelector("h1");
-            h1.textContent = `The time is ${new Intl.DateTimeFormat(languageValue, { timeStyle: "medium" }).format(d)}`;
+            if (localStorage.getItem("language") !== null) {
+                h1.textContent = `The time is ${new Intl.DateTimeFormat(localStorage.getItem("language"), { timeStyle: "medium" }).format(d)}`;
+            } else {
+                h1.textContent = `The time is ${new Intl.DateTimeFormat(languageValue, { timeStyle: "medium" }).format(d)}`;
+            }
         }
         function getDay() {
             let e = new Date();
             let h2 = document.querySelector("h2");
             if (localStorage.getItem("language") !== null) {
                 h2.textContent = new Intl.DateTimeFormat(localStorage.getItem("language"), {
+                    dateStyle: "full"
+                }).format(e);
+            } else {
+                h2.textContent = new Intl.DateTimeFormat(languageValue, {
                     dateStyle: "full"
                 }).format(e);
             }

@@ -1,7 +1,7 @@
 try {
 	let counter = 0;
 	while (true) {
-		let rockpaperscissors = function () {
+		let rockpaperscissors = function() {
 			let choose = prompt('Rock , Paper , or Scissors?');
 				if (choose.toUpperCase() === 'ROCK') {
 					let choices = ['Rock', 'Paper', 'Scissors'];
@@ -23,7 +23,7 @@ try {
 					} else if (AI_choose === 'Scissors') {
 						alert(`You lost! AI chose ${AI_choose}, and you chose ${choose}!`);
 					}
-			} else if (choose.toUpperCase() === 'SCISSORS') {
+				} else if (choose.toUpperCase() === 'SCISSORS') {
 					let choices = ['Rock', 'Paper', 'Scissors'];
 					let AI_choose = choices[Math.floor(Math.random() * 3)];
 					if (AI_choose === 'Rock') {
@@ -50,6 +50,6 @@ try {
 		}
 		counter = 1;
 	};
-} catch {
-	
+} catch (err) {
+	console.log(err.message)
 }

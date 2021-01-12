@@ -5,6 +5,11 @@ button {
     background-color: green;
     padding: 20px 16px;
     position: absolute;
+    top: 240px;
+    left: 10px;
+}
+input {
+    position: absolute;
     top: 220px;
     left: 10px;
 }

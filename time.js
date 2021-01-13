@@ -34,7 +34,17 @@ window.onload = function() {
                 }).format(e);
             }
         }
+        if (supportsLocalStorage()) {
+            if (localStorage.getItem("allowLocalStorage") === "allow-localStorage") {
+                allowLocalStorage.checked = true;
+            } else {
+                allowLocalStorage.checked = false;
+            }
+        }
         changeSettings.addEventListener("click", () => {
+            if (allowLocalStorage.checked === false) {
+                allowLocalStorage.value = "";
+            }
             languageValue = language.value;
             if (allowLocalStorage.value === "allow-localStorage") {
                 if (supportsLocalStorage()) {
@@ -51,13 +61,6 @@ window.onload = function() {
                 }
             }
         });
-        if (supportsLocalStorage()) {
-            if (localStorage.getItem("allowLocalStorage") === "allow-localStorage") {
-                allowLocalStorage.checked = true;
-            } else {
-                allowLocalStorage.checked = false;
-            }
-        }
         let myInterval = setInterval(() => {
             getTime();
             getDay();

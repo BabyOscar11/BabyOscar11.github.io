@@ -44,6 +44,8 @@ window.onload = function() {
         changeSettings.addEventListener("click", () => {
             if (allowLocalStorage.checked === false) {
                 allowLocalStorage.value = "";
+            } else {
+                allowLocalStorage.value = "allow-localStorage";
             }
             languageValue = language.value;
             if (allowLocalStorage.value === "allow-localStorage") {

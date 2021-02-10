@@ -6,6 +6,6 @@ h1 {
     flex-direction: column;    
     font-family: sans-serif;
 }
-a:hover {
+a:hover, a:focus {
     background-color: skyblue;
 }

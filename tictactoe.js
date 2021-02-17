@@ -37,9 +37,9 @@ function handleClickOnSpace(space) {
     }
     let turnTextSpan = document.getElementById("turn-text-span");
     if (turn === "x") {
-        turnTextSpan.style.color = "red";
-    } else if (turn === "o") {
         turnTextSpan.style.color = "blue";
+    } else if (turn === "o") {
+        turnTextSpan.style.color = "red";
     }
 }
 function checkForWin() {

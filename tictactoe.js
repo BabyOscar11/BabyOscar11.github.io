@@ -30,7 +30,11 @@ function handleClickOnSpace(space) {
     } else if (turn === "o") {
         space.style.color = "blue";
     }
-    turnText.innerHTML = `<p id="turn-text">Turn: <span id="turn-text-span">${turn.toUpperCase()}</span>`;
+    if (turn === "x") {
+        turnText.innerHTML = `<p id="turn-text">Turn: <span id="turn-text-span">O</span>`;
+    } else if (turn === "o") {
+        turnText.innerHTML = `<p id="turn-text">Turn: <span id="turn-text-span">X</span>`;
+    }
     let turnTextSpan = document.getElementById("turn-text-span");
     if (turn === "x") {
         turnTextSpan.style.color = "red";

@@ -7,6 +7,7 @@ const sixthSpace = document.getElementById("sixth-space");
 const seventhSpace = document.getElementById("seventh-space");
 const eighthSpace = document.getElementById("eighth-space");
 const ninthSpace = document.getElementById("ninth-space");
+const turnText = document.getElementById("turn-text");
 let firstSpaceSelected = false;
 let secondSpaceSelected = false;
 let thirdSpaceSelected = false;
@@ -28,6 +29,13 @@ function handleClickOnSpace(space) {
         space.style.color = "red";
     } else if (turn === "o") {
         space.style.color = "blue";
+    }
+    turnText.innerHTML = `<p id="turn-text">Turn: <span id="turn-text-span">${turn}</span>`;
+    let turnTextSpan = document.getElementById("turn-text-span");
+    if (turn === "x") {
+        turnTextSpan.style.color = "red";
+    } else if (turn === "o") {
+        turnTextSpan.style.color = "blue";
     }
 }
 function checkForWin() {

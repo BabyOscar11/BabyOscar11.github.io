@@ -24,6 +24,11 @@ function handleClickOnSpace(space) {
     i++;
     turn = turns[i % 2];
     space.textContent = turn;
+    if (turn === "x") {
+        space.style.color = "red";
+    } else if (turn === "o") {
+        space.style.color = "blue";
+    }
 }
 function checkForWin() {
    for (let i = 0; i < 7; i++) {

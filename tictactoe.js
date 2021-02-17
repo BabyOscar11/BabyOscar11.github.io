@@ -31,9 +31,9 @@ function handleClickOnSpace(space) {
         space.style.color = "blue";
     }
     if (turn === "x") {
-        turnText.innerHTML = `<p id="turn-text">Turn: <span id="turn-text-span">O</span>`;
+        turnText.innerHTML = `Turn: <span id="turn-text-span">O</span>`;
     } else if (turn === "o") {
-        turnText.innerHTML = `<p id="turn-text">Turn: <span id="turn-text-span">X</span>`;
+        turnText.innerHTML = `Turn: <span id="turn-text-span">X</span>`;
     }
     let turnTextSpan = document.getElementById("turn-text-span");
     if (turn === "x") {

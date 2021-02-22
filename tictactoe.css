@@ -2,6 +2,9 @@
     font-family: sans-serif;
     text-align: center;
 }
+#turn-text-span {
+    color: blue;
+}
 .space {
     position: absolute;
     width: 100px;

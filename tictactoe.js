@@ -7,6 +7,7 @@ const sixthSpace = document.getElementById("sixth-space");
 const seventhSpace = document.getElementById("seventh-space");
 const eighthSpace = document.getElementById("eighth-space");
 const ninthSpace = document.getElementById("ninth-space");
+const turnText = document.getElementById("turn-text");
 let firstSpaceSelected = false;
 let secondSpaceSelected = false;
 let thirdSpaceSelected = false;
@@ -24,23 +25,43 @@ function handleClickOnSpace(space) {
     i++;
     turn = turns[i % 2];
     space.textContent = turn;
+    if (turn === "x") {
+        space.style.color = "red";
+    } else if (turn === "o") {
+        space.style.color = "blue";
+    }
+    if (turn === "x") {
+        turnText.innerHTML = `Turn: <span id="turn-text-span">O</span>`;
+    } else if (turn === "o") {
+        turnText.innerHTML = `Turn: <span id="turn-text-span">X</span>`;
+    }
+    let turnTextSpan = document.getElementById("turn-text-span");
+    if (turn === "x") {
+        turnTextSpan.style.color = "blue";
+    } else if (turn === "o") {
+        turnTextSpan.style.color = "red";
+    }
 }
 function checkForWin() {
-    for (let i = 0; i < 7; i++) {
-        if (board[i][1] === board[i + 1][1] && board[i][1] === board[i + 2][1] && i % 3 === 0 && board[i][1] !== null) {
-            document.body.innerHTML = `${turn.toUpperCase()} wins!<br />Click reload to play again.`;
-        }
-    }
-    for (let i = 0; i < 3; i++) {
-        if (board[i][1] === board[i + 3][1] && board[i][1] === board[i + 6][1] && board[i][1] !== null) {
-            document.body.innerHTML = `${turn.toUpperCase()} wins!<br />Click reload to play again.`;
-        }
-    }
-    if (board[0][1] === board[4][1] && board[0][1] === board[8][1] && board[0][1] !== null || board[2][1] === board[4][1] && board[2][1] === board[6][1] && board[2][1] !== null) {
-        document.body.innerHTML = `${turn.toUpperCase()} wins!<br />Click reload to play again.`;
-    } else if (board[0][1] !== null && board[1][1] !== null && board[2][1] !== null && board[3][1] !== null && board[4][1] !== null && board[5][1] !== null && board[6][1] !== null && board[7][1] !== null && board[8][1] !== null) {
-        document.body.innerHTML = "It's a draw!<br />Click reload to play again.";
-    }
+   for (let i = 0; i < 7; i++) {
+       if (board[i][1] === board[i + 1][1] && board[i][1] === board[i + 2][1] && i % 3 === 0 && board[i][1] !== null) {
+           document.body.innerHTML = `${turn.toUpperCase()} wins!<br />Click reload to play again.`;
+           return;
+       }
+   }
+   for (let i = 0; i < 3; i++) {
+       if (board[i][1] === board[i + 3][1] && board[i][1] === board[i + 6][1] && board[i][1] !== null) {
+           document.body.innerHTML = `${turn.toUpperCase()} wins!<br />Click reload to play again.`;
+           return;
+       }
+   }
+   if (board[0][1] === board[4][1] && board[0][1] === board[8][1] && board[0][1] !== null || board[2][1] === board[4][1] && board[2][1] === board[6][1] && board[2][1] !== null) {
+       document.body.innerHTML = `${turn.toUpperCase()} wins!<br />Click reload to play again.`;
+       return;
+   } else if (board[0][1] !== null && board[1][1] !== null && board[2][1] !== null && board[3][1] !== null && board[4][1] !== null && board[5][1] !== null && board[6][1] !== null && board[7][1] !== null && board[8][1] !== null) {
+       document.body.innerHTML = "It's a draw!<br />Click reload to play again.";
+       return;
+   }
 }
 firstSpace.addEventListener("click", () => {
     if (!firstSpaceSelected) {

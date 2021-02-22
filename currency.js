@@ -22,9 +22,9 @@ xhr.onreadystatechange = function() {
             j++;
         }
         if (k < 3) {
-            document.write(`<p id=${currency} style="font-family: sans-serif;">You can sell 0.1 ${currency} for ${data.bids[i - 1][0]}, and you can buy 0.1 ${currency} for ${data.asks[j - 1][0]}</p>`);
+            document.write(`<p id=${currency} style="font-family: sans-serif;">You can sell 0.1 ${currency} at ${data.bids[i - 1][0]} per ${currency}, and you can buy 0.1 ${currency} at ${data.asks[j - 1][0]} per ${currency}</p>`);
         } else {
-            document.getElementById(currency).textContent = `You can sell 0.1 ${currency} for ${data.bids[i - 1][0]}, and you can buy 0.1 ${currency} for ${data.asks[j - 1][0]}`;
+            document.getElementById(currency).textContent = `You can sell 0.1 ${currency} at ${data.bids[i - 1][0]} per ${currency}, and you can buy 0.1 ${currency} at ${data.asks[j - 1][0]} per ${currency}`;
         }
         k++;
     }

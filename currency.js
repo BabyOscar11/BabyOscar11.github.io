@@ -1,7 +1,7 @@
 const xhr = new XMLHttpRequest();
 let currencyData = "";
 let dataCameBack = false;
-let currency = "bitcoins";
+let currency = "BTC";
 let k = 0;
 let allDataCameBack = true;
 xhr.onreadystatechange = function() {
@@ -31,13 +31,13 @@ xhr.onreadystatechange = function() {
 };
 let getData = setInterval(() => {
     if (allDataCameBack) {
-        currency = "bitcoins";
+        currency = "BTC";
         allDataCameBack = false;
         xhr.open("GET", "https://api.binance.us/api/v3/depth?symbol=BTCUSD");
         xhr.send();
         let checkIfBitcoinCameBack = setInterval(() => {
             if (dataCameBack) {
-                currency = "ethereum";
+                currency = "ETH";
                 xhr.open("GET", "https://api.binance.us/api/v3/depth?symbol=ETHUSD");
                 xhr.send();
                 clearInterval(checkIfBitcoinCameBack);
@@ -45,14 +45,14 @@ let getData = setInterval(() => {
         }, 100);
         let checkIfEthereumCameBack = setInterval(() => {
             if (dataCameBack) {
-                currency = "nano";
+                currency = "NANO";
                 xhr.open("GET", "https://api.binance.us/api/v3/depth?symbol=NANOUSD");
                 xhr.send();
                 clearInterval(checkIfEthereumCameBack);
             }
         }, 100);
     }
-    if (dataCameBack && currency === "nano") {
+    if (dataCameBack && currency === "NANO") {
         allDataCameBack = true;
     }
 }, 1000);

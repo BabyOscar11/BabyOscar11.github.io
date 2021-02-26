@@ -1,5 +1,4 @@
 const xhr = new XMLHttpRequest();
-let currencyData = "";
 let dataCameBack = false;
 let currency = "BTC";
 let k = 0;

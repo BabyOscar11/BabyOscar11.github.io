@@ -11,10 +11,10 @@ function titleCase(str) {
 function updateURLOfImage(imgId, altText) {
     let hours = new Date().getHours();
     if (hours >= 18 || hours <= 5) {
-        weatherIconImage.src = `http://openweathermap.org/img/wn/${imgId}n@2x.png`;
+        weatherIconImage.src = `https://openweathermap.org/img/wn/${imgId}n@2x.png`;
         weatherIconImage.alt = altText + " (Night)";
     } else {
-        weatherIconImage.src = `http://openweathermap.org/img/wn/${imgId}d@2x.png`;
+        weatherIconImage.src = `https://openweathermap.org/img/wn/${imgId}d@2x.png`;
         weatherIconImage.alt = altText + " (Day)";
     }
 }

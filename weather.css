@@ -1,0 +1,27 @@
+* {
+    font-family: sans-serif;
+    text-align: center;
+}
+body {
+    background-color: skyblue;
+}
+input {
+    text-align: left;
+    height: 50px;
+    width: 70%;
+    font-size: 45px;
+    outline: none;
+}
+button {
+    height: 56px;
+    border: none;
+    position: relative;
+    top: -11px;
+    left: -5px;
+    background-color: darkblue;
+    color: white;
+}
+img {
+    display: none;
+    margin: 0 auto;
+}

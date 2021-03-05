@@ -68,6 +68,6 @@ xhr.onreadystatechange = function() {
 }
 formForGettingWeatherData.addEventListener("submit", (e) => {
     e.preventDefault();
-    xhr.open("GET", `http://api.openweathermap.org/data/2.5/weather?q=${city.value}&units=imperial&apikey=f1c038a8f5850dda4065980b56297491`);
+    xhr.open("GET", `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&units=imperial&apikey=f1c038a8f5850dda4065980b56297491`);
     xhr.send();
 });
